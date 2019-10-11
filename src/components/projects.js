@@ -1,66 +1,134 @@
 import React, { Component } from 'react';
 import { Tabs, Tab, Grid, Cell, Card, CardTitle, CardText, CardActions, Button, CardMenu, IconButton } from 'react-mdl';
+import Fade from 'react-reveal/Fade';
+import project1 from '../images/project1.jpg'; 
+import project2 from '../images/project2.jpg'; 
+import project3 from '../images/project3.jpg'; 
+import project4 from '../images/project4.jpg';
+import project5 from '../images/project5.jpg';
+import project6 from '../images/project6.jpg';
 
 
 class Projects extends Component {
   constructor(props) {
     super(props);
-    this.state = { activeTab: 0 };
+    this.state = { activeTab: 0,
+                   projecturl:'' };
+
+   
   }
+
+   
+
+
 
   toggleCategories() {
 
     if(this.state.activeTab === 0){
+     
       return(
+        
         <div className="projects-grid">
+         <Grid>
+         <Fade top>
+         <Cell col={4}>
           {/* Project 1 */}
           <Card shadow={5} style={{minWidth: '450', margin: 'auto'}}>
-            <CardTitle style={{color: '#fff', height: '176px', background: 'url(https://xtnotes-1255646395.coshk.myqcloud.com/images/react-1.svg) center / cover'}} >React Project #1</CardTitle>
+            <img src={project1} style={{width: '100%'}} />
             <CardText>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+            <h3>Zeeyarah</h3>
             </CardText>
             <CardActions border>
-              <Button colored>GitHub</Button>
-              <Button colored>CodePen</Button>
-              <Button colored>Live Demo</Button>
+            <a href="https://www.zeeyarah.ae" rel="noopener noreferrer" target="_blank">
+              Live Demo</a>
             </CardActions>
             <CardMenu style={{color: '#fff'}}>
               <IconButton name="share" />
             </CardMenu>
           </Card>
-
+          </Cell>
           {/* Project 2 */}
+          <Cell col={4}>
           <Card shadow={5} style={{minWidth: '450', margin: 'auto'}}>
-            <CardTitle style={{color: '#fff', height: '176px', background: 'url(https://xtnotes-1255646395.coshk.myqcloud.com/images/react-1.svg) center / cover'}} >React Project #2</CardTitle>
+          <img src={project2} style={{width: '100%'}} />
             <CardText>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+               <h3>Urban Automotive</h3>
             </CardText>
             <CardActions border>
-              <Button colored>GitHub</Button>
-              <Button colored>CodePen</Button>
-              <Button colored>Live Demo</Button>
+            
+            <a href="https://www.urban-automotive.ae/" rel="noopener noreferrer" target="_blank">Live Demo</a>
             </CardActions>
             <CardMenu style={{color: '#fff'}}>
               <IconButton name="share" />
             </CardMenu>
           </Card>
-
+          </Cell>
           {/* Project 3 */}
+          <Cell col={4}>
           <Card shadow={5} style={{minWidth: '450', margin: 'auto'}}>
-            <CardTitle style={{color: '#fff', height: '176px', background: 'url(https://xtnotes-1255646395.coshk.myqcloud.com/images/react-1.svg) center / cover'}} >React Project #3</CardTitle>
+          <img src={project3} style={{width: '100%'}} /> 
             <CardText>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+              <h3>Dermazone Store</h3>
             </CardText>
             <CardActions border>
-              <Button colored>GitHub</Button>
-              <Button colored>CodePen</Button>
-              <Button colored>Live Demo</Button>
+             
+            <a href="https://store.dermazone.net/" rel="noopener noreferrer" target="_blank">Live Demo</a>
             </CardActions>
             <CardMenu style={{color: '#fff'}}>
               <IconButton name="share" />
             </CardMenu>
           </Card>
+          </Cell>
+          <Cell col={4}>
+          <Card shadow={5} style={{minWidth: '450', margin: 'auto'}}>
+          <img src={project4} style={{width: '100%'}} /> 
+            <CardText>
+              <h3>The Elite Cars</h3>
+            </CardText>
+            <CardActions border>
+              
+            <a href="https://theelitecars.com/" rel="noopener noreferrer" target="_blank">Live Demo</a>
+            </CardActions>
+            <CardMenu style={{color: '#fff'}}>
+              <IconButton name="share" />
+            </CardMenu>
+          </Card>
+          </Cell>
+          <Cell col={4}>
+          <Card shadow={5} style={{minWidth: '450', margin: 'auto'}}>
+          <img src={project5} style={{width: '100%'}} /> 
+            <CardText>
+             <h3>Pearl Motors</h3>
+            </CardText>
+            <CardActions border>
+    
+            <a href="https://pearl-motors.com" rel="noopener noreferrer" target="_blank">Live Demo</a>
+            </CardActions>
+            <CardMenu style={{color: '#fff'}}>
+              <IconButton name="share" />
+            </CardMenu>
+          </Card>
+          </Cell>
+          <Cell col={4}>
+          <Card shadow={5} style={{minWidth: '450', margin: 'auto'}}>
+          <img src={project6} style={{width: '100%'}} /> 
+            <CardText>
+            <h3>Suncity Motors</h3>
+            </CardText>
+            <CardActions border> 
+            <a href="https://suncitymotors.net/" rel="noopener noreferrer" target="_blank">Live Demo</a>
+            </CardActions>
+            <CardMenu style={{color: '#fff'}}>
+              <IconButton name="share" />
+            </CardMenu>
+          </Card>
+          </Cell>
+          </Fade>
+          </Grid>
+         
         </div>
+
+        
 
 
       )
@@ -83,13 +151,12 @@ class Projects extends Component {
 
 
   render() {
+    console.log(project1)
     return(
       <div>
         <Tabs activeTab={this.state.activeTab} onChange={(tabId) => this.setState({ activeTab: tabId })} ripple>
-          <Tab>React</Tab>
-          <Tab>Angular</Tab>
-          <Tab>VueJS</Tab>
-          <Tab>MongoDB</Tab>
+          <Tab>Recent projects</Tab>
+        
         </Tabs>
 
 

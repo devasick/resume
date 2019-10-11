@@ -1,94 +1,149 @@
 import React, { Component } from 'react';
 import { Grid, Cell } from 'react-mdl';
-import Education from './education';
-import Experience from './experience';
-import Skills from './skills';
+import Education from './Education';
+import Experience from './Experience';
+import Skills from './Skills';
+import img from '../images/image.jpg'; 
+import Fade from 'react-reveal/Fade';
+
 
 
 class Resume extends Component {
+  download() {
+    // fake server request, getting the file url as response
+    setTimeout(() => {
+      const response = {
+        file: 'http://releases.ubuntu.com/12.04.5/ubuntu-12.04.5-alternate-amd64.iso',
+      };
+      // server sent the url to the file!
+      // now, let's download:
+      window.location.href = response.file;
+      // you could also do:
+      // window.open(response.file);
+    }, 100);
+  }
   render() {
     return(
       <div>
         <Grid>
-          <Cell col={4}>
-            <div style={{textAlign: 'center'}}>
-              <img
-                src="https://www.shareicon.net/download/2015/09/18/103157_man_512x512.png"
-                alt="avatar"
-                style={{height: '200px'}}
-                 />
-            </div>
+        <Cell className="resume-left-col" col={8}>
+        <Fade top>
 
-            <h2 style={{paddingTop: '2em'}}>Paul Hanna</h2>
-            <h4 style={{color: 'grey'}}>Programmer</h4>
-            <hr style={{borderTop: '3px solid #833fb2', width: '50%'}}/>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-            <hr style={{borderTop: '3px solid #833fb2', width: '50%'}}/>
-            <h5>Address</h5>
-            <p>1 Hacker Way Menlo Park, 94025</p>
-            <h5>Phone</h5>
-            <p>(123) 456-7890</p>
-            <h5>Email</h5>
-            <p>someone@example.com</p>
-            <h5>Web</h5>
-            <p>mywebsite.com</p>
-            <hr style={{borderTop: '3px solid #833fb2', width: '50%'}}/>
-          </Cell>
-          <Cell className="resume-right-col" col={8}>
             <h2>Education</h2>
 
 
             <Education
-              startYear={2002}
-              endYear={2006}
-              schoolName="My University"
-              schoolDescription="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+              startYear={2006}
+              endYear={2009}
+              schoolName="Bharathidasan University"
+              schoolDescription="Bachelor in Information Technology"
                />
 
-               <Education
-                 startYear={2007}
-                 endYear={2009}
-                 schoolName="My 2nd University"
-                 schoolDescription="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
-                  />
+         
                 <hr style={{borderTop: '3px solid #e22947'}} />
 
               <h2>Experience</h2>
 
             <Experience
-              startYear={2009}
-              endYear={2012}
-              jobName="First Job"
-              jobDescription="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+              startmonth="July"
+              startYear={2017}
+              endmonth="July"
+              endYear={2019}
+              jobName="Web Developer"
+              jobDescription="The Elite Cars, Dubai, UAE"
               />
 
-              <Experience
-                startYear={2012}
-                endYear={2016}
-                jobName="Second Job"
-                jobDescription="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
-                />
+<Experience
+              startmonth="April"
+              startYear={2017}
+              endmonth="May"
+              endYear={2019}
+              jobName="Web Developer"
+              jobDescription="Dermazone Trading LLC, Dubai, UAE"
+              />
+
+<Experience
+              startmonth="April"
+              startYear={2014}
+              endmonth="January"
+              endYear={2015}
+              jobName="Software Developer"
+              jobDescription="Psiog Digital Pvt LTD, Chennai, India"
+              />
+
+<Experience
+              startmonth="March"
+              startYear={2011}
+              endmonth="April"
+              endYear={2014}
+              jobName="Associate Software Engineer"
+              jobDescription="Ahsan Technologies, Chennai, India"
+              />
+
+              
               <hr style={{borderTop: '3px solid #e22947'}} />
               <h2>Skills</h2>
               <Skills
-                skill="javascript"
+                skill="PHP"
                 progress={100}
                 />
-                <Skills
-                  skill="HTML/CSS"
+                 <Skills
+                  skill="MYSQL"
                   progress={80}
                   />
+                <Skills
+                  skill="HTML/CSS"
+                  progress={82}
+                  />
                   <Skills
-                    skill="NodeJS"
-                    progress={50}
+                    skill="WordPress"
+                    progress={75}
                     />
                     <Skills
                       skill="React"
-                      progress={25}
+                      progress={50}
                       />
-
+                        <Skills
+                      skill="Magento"
+                      progress={70}
+                      />
+                       <Skills
+                      skill="MVC"
+                      progress={70}
+                      />
+       </Fade>
 
           </Cell>
+          <Cell col={4} className="resume-right-col">
+          <Fade top>
+            <div style={{textAlign: 'center'}}>
+            <img src={img} className="avatar-img" />
+            </div>
+
+            <h2 style={{paddingTop: '2em'}}>Asick Ahamed</h2>
+            <h4 style={{color: 'grey'}}>Web & Front-end Developer</h4>
+            <hr style={{borderTop: '3px solid #833fb2', width: '50%'}}/>
+            <p className="text-justify">As a web developer with a bachelor’s degree in Information
+Technology and 7 years’ professional experience in India, the UAE, my objective
+is to make a positive impact on my clients, co-workers, and the
+Internet. I am deeply passionate about using my skills and
+experience to develop compelling, up-to-date, responsive, and
+secure websites and web applications based on the latest
+trends.</p>
+            <hr style={{borderTop: '3px solid #833fb2', width: '50%'}}/>
+            <h5> <i className="fa fa-map-marker" aria-hidden="true"/> Address</h5>
+            <p>Holsteinische str,52, 12163, Berlin, Germany</p>
+            <h5><i className="fa fa-phone" aria-hidden="true"/> Phone</h5>
+            <p><a href="tel:491512 4457840">+(49 1) 512 4457840</a></p>
+            <h5><i className="fa fa-envelope" aria-hidden="true"/> Email</h5>
+            <p><a href="mailto:ashiq.it@gmail.com">ashiq.it@gmail.com</a></p>
+            <h5><i className="fa fa-globe" aria-hidden="true"/> Web</h5>
+            <p><a href="http://asickweb.com/">www.asickweb.com</a></p>
+            <hr style={{borderTop: '3px solid #833fb2', width: '50%'}}/>
+            <h4><a href="#" onClick={this.download}><i className="fa fa-download" aria-hidden="true"/> Download CV</a></h4>
+          </Fade>
+          </Cell>
+          
         </Grid>
       </div>
     )
